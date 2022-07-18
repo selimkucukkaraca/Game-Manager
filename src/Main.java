@@ -1,5 +1,7 @@
+import Entity.Campaing;
 import Entity.Game;
 import Entity.Player;
+import manager.CampaingServiceImpl;
 import manager.GameService;
 import manager.GameServiceImpl;
 import manager.PlayerServiceImpl;
@@ -24,8 +26,6 @@ public class Main {
 
 
         GameServiceImpl gameService = new GameServiceImpl();
-
-
         Game game = new Game();
         game.setId(2);
         game.setName("valorant");
@@ -33,5 +33,14 @@ public class Main {
         game.setMemory(27.567);
 
         gameService.buy(game);
+
+
+        CampaingServiceImpl campaingService = new CampaingServiceImpl();
+        Campaing campaing = new Campaing();
+        campaing.setDiscount(20.00);
+
+        campaingService.discount(campaing);
+
+
     }
 }
