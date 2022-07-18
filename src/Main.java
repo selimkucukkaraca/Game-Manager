@@ -1,10 +1,14 @@
+import Entity.Game;
 import Entity.Player;
+import manager.GameService;
+import manager.GameServiceImpl;
 import manager.PlayerServiceImpl;
 
 import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
+
         PlayerServiceImpl playerService = new PlayerServiceImpl();
 
         Player player = new Player();
@@ -16,5 +20,18 @@ public class Main {
         player.setBirthDay("02/06/2000");
 
         playerService.add(player);
+
+
+
+        GameServiceImpl gameService = new GameServiceImpl();
+
+
+        Game game = new Game();
+        game.setId(2);
+        game.setName("valorant");
+        game.setPrice(23.50);
+        game.setMemory(27.567);
+
+        gameService.buy(game);
     }
 }
